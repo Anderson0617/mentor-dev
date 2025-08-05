@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mentor.Dev–Gerador</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="bubbles">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <h1 class="logo-com-imagem">
+            <img src="img/1000016488.jpg" alt="Foto" class="logo-img" />
+            Mentor.Dev
+        </h1>
+
+
+        <h1 class="titulo-principal">
+            Gere textos para LinkedIn, GitHub, currículo com IA
+        </h1>
+
+
+        <form id="textForm">
+            <label for="tipo">Escolha o tipo de texto:</label>
+            <select id="tipo" required>
+                <option value="" disabled selected>Selecione</option>
+                <option value="linkedin">Biografia para LinkedIn</option>
+                <option value="github">Resumo para GitHub</option>
+                <option value="projeto">Descrição de Projeto</option>
+                <option value="motivacional">Post Motivacional</option>
+            </select>
+
+            <label for="nome">Seu nome:</label>
+            <input type="text" id="nome" placeholder="Ex: Coloque seu nome" required />
+
+            <label for="info">Conte um pouco sobre você:</label>
+            <textarea id="info" placeholder="Ex: Sempre aprendendo. Sem limites..." required></textarea>
+
+            <button type="submit">Gerar Texto ✨</button>
+        </form>
+
+        <div id="resultado" class="texto-criado">
+            <h2>📝 Texto Gerado:</h2>
+            <p id="textoGerado">...</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
