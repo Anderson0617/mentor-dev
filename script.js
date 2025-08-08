@@ -1,5 +1,5 @@
 
-// === FotoMentor.Dev - Script JS Avançado (corrigido) ===
+// === Mentor.Dev - Script JS Avançado  esta tudo detalhado  esse js  obrigado por ver  meu projeto TMJ ===
 
 // Definição das constantes globais para nome do app e versão
 const APP_NAME = "FotoMentor.Dev";
