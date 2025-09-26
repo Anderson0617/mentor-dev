@@ -6,7 +6,7 @@ Como a conta de teste do n8n já expirou, é provável que ao testar o sistema e
 Mas não se preocupe: o fallback foi projetado para gerar **textos longos e completos** diretamente no navegador, sem precisar de servidor externo. ✅
 
 ---
-🌐 Projeto online: [Mentor.Dev – Gerador de Textos](https://anderson0617.github.io/Mentor-Dev/)  
+🌐 Projeto online: [Mentor.Dev – Gerador de Textos](https://anderson0617.github.io/mentor-dev/)  
 📂 Repositório no GitHub: [github.com/Anderson0617/Mentor-Dev](https://github.com/Anderson0617/Mentor-Dev)  
 _ _ _ _ _ _
 
