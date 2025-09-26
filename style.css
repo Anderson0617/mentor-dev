@@ -1,3 +1,5 @@
+
+
 * {
 
     box-sizing: border-box;
@@ -31,23 +33,23 @@ h1 {
   align-items: center;
   gap: 12px;
   font-size: 2em;
-  color: #007acc; /* mesma cor do h1 */
+  color: #007acc; 
 }
 
 .logo-img {
-  width: 2em;              /* igual ao tamanho da fonte */
-  height: 2em;             /* proporcional */
-  border-radius: 50%;      /* redondo */
-  object-fit: cover;       /* preenche mantendo proporção */
+  width: 2em;              
+  height: 2em;             
+  border-radius: 50%;      
+  object-fit: cover;       
   border: 2px solid #007acc;
   box-shadow: 0 0 10px rgba(0, 122, 204, 0.4);
 }
 
 
 .titulo-principal {
-  font-size: 1.2rem; /* tamanho maior */
-  line-height: 1.6; /* mais espaçado verticalmente */
-  color:  #007acc;; /* azul claro suave */
+  font-size: 1.2rem; 
+  line-height: 1.6; 
+  color:  #007acc;; 
   text-align: center;
   margin-bottom: 30px;
   font-weight: 600;
@@ -132,260 +134,29 @@ button:hover {
   top: 0;
   left: 0;
   overflow: hidden;
-  z-index: 0;
-}
-
-.bubbles span {
-  position: absolute;
-  display: block;
-  width: 8px;
-  height: 8px;
-  background: hsl(calc(360 * var(--i)), 70%, 60%);
-  border-radius: 50%;
-  bottom: -20px;
-  animation: rise 10s linear infinite;
-  opacity: 0.7;
-  z-index: 0;
-}
-
-.bubbles span:nth-child(n) {
-  left: calc(var(--i) * 3%);
-  animation-duration: calc(8s + var(--i) * 0.3s);
-  animation-delay: calc(var(--i) * -0.5s);
-}
-
-@keyframes rise {
-  0% {
-    transform: translateY(0) scale(1);
-    opacity: 0;
-  }
-  50% {
-    opacity: 0.7;
-  }
-  100% {
-    transform: translateY(-100vh) scale(0.8);
-    opacity: 0;
-  }
-}
-
-.bubbles {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-  overflow: hidden;
-  pointer-events: none;
-}
-
-.bubbles span:nth-child(1)  { --i: 1; }
-.bubbles span:nth-child(2)  { --i: 2; }
-.bubbles span:nth-child(3)  { --i: 3; }
-.bubbles span:nth-child(4)  { --i: 4; }
-.bubbles span:nth-child(5)  { --i: 5; }
-.bubbles span:nth-child(6)  { --i: 6; }
-.bubbles span:nth-child(7)  { --i: 7; }
-.bubbles span:nth-child(8)  { --i: 8; }
-.bubbles span:nth-child(9)  { --i: 9; }
-.bubbles span:nth-child(10) { --i: 10; }
-.bubbles span:nth-child(11) { --i: 11; }
-.bubbles span:nth-child(12) { --i: 12; }
-.bubbles span:nth-child(13) { --i: 13; }
-.bubbles span:nth-child(14) { --i: 14; }
-.bubbles span:nth-child(15) { --i: 15; }
-.bubbles span:nth-child(16) { --i: 16; }
-.bubbles span:nth-child(17) { --i: 17; }
-.bubbles span:nth-child(18) { --i: 18; }
-.bubbles span:nth-child(19) { --i: 19; }
-.bubbles span:nth-child(20) { --i: 20; }
-.bubbles span:nth-child(21) { --i: 21; }
-.bubbles span:nth-child(22) { --i: 22; }
-.bubbles span:nth-child(23) { --i: 23; }
-.bubbles span:nth-child(24) { --i: 24; }
-.bubbles span:nth-child(25) { --i: 25; }
-.bubbles span:nth-child(26) { --i: 26; }
-.bubbles span:nth-child(27) { --i: 27; }
-.bubbles span:nth-child(28) { --i: 28; }
-.bubbles span:nth-child(29) { --i: 29; }
-.bubbles span:nth-child(30) { --i: 30; }
-.bubbles span:nth-child(31) { --i: 31; }
-.bubbles span:nth-child(32) { --i: 32; }
-.bubbles span:nth-child(33) { --i: 33; }
-.bubbles span:nth-child(34) { --i: 34; }
-.bubbles span:nth-child(35) { --i: 35; }
-.bubbles span:nth-child(36) { --i: 36; }
-.bubbles span:nth-child(37) { --i: 37; }
-.bubbles span:nth-child(38) { --i: 38; }
-.bubbles span:nth-child(39) { --i: 39; }
-.bubbles span:nth-child(40) { --i: 40; }
-.bubbles span:nth-child(41) { --i: 41; }
-.bubbles span:nth-child(42) { --i: 42; }
-.bubbles span:nth-child(43) { --i: 43; }
-.bubbles span:nth-child(44) { --i: 44; }
-.bubbles span:nth-child(45) { --i: 45; }
-.bubbles span:nth-child(46) { --i: 46; }
-.bubbles span:nth-child(47) { --i: 47; }
-.bubbles span:nth-child(48) { --i: 48; }
-.bubbles span:nth-child(49) { --i: 49; }
-.bubbles span:nth-child(50) { --i: 50; }
-.bubbles span:nth-child(51) { --i: 51; }
-.bubbles span:nth-child(52) { --i: 52; }
-.bubbles span:nth-child(53) { --i: 53; }
-.bubbles span:nth-child(54) { --i: 54; }
-.bubbles span:nth-child(55) { --i: 55; }
-.bubbles span:nth-child(56) { --i: 56; }
-.bubbles span:nth-child(57) { --i: 57; }
-.bubbles span:nth-child(58) { --i: 58; }
-.bubbles span:nth-child(59) { --i: 59; }
-.bubbles span:nth-child(60) { --i: 60; }
-.bubbles span:nth-child(61) { --i: 61; }
-.bubbles span:nth-child(62) { --i: 62; }
-.bubbles span:nth-child(63) { --i: 63; }
-.bubbles span:nth-child(64) { --i: 64; }
-.bubbles span:nth-child(65) { --i: 65; }
-.bubbles span:nth-child(66) { --i: 66; }
-.bubbles span:nth-child(67) { --i: 67; }
-.bubbles span:nth-child(68) { --i: 68; }
-.bubbles span:nth-child(69) { --i: 69; }
-.bubbles span:nth-child(70) { --i: 70; }
-.bubbles span:nth-child(71) { --i: 71; }
-.bubbles span:nth-child(72) { --i: 72; }
-.bubbles span:nth-child(73) { --i: 73; }
-.bubbles span:nth-child(74) { --i: 74; }
-.bubbles span:nth-child(75) { --i: 75; }
-.bubbles span:nth-child(76) { --i: 76; }
-.bubbles span:nth-child(77) { --i: 77; }
-.bubbles span:nth-child(78) { --i: 78; }
-.bubbles span:nth-child(79) { --i: 79; }
-.bubbles span:nth-child(80) { --i: 80; }
-.bubbles span:nth-child(81) { --i: 81; }
-.bubbles span:nth-child(82) { --i: 82; }
-.bubbles span:nth-child(83) { --i: 83; }
-.bubbles span:nth-child(84) { --i: 84; }
-.bubbles span:nth-child(85) { --i: 85; }
-.bubbles span:nth-child(86) { --i: 86; }
-.bubbles span:nth-child(87) { --i: 87; }
-.bubbles span:nth-child(88) { --i: 88; }
-.bubbles span:nth-child(89) { --i: 89; }
-.bubbles span:nth-child(90) { --i: 90; }
-
-.bubbles span:nth-child(91)  { --i: 91; }
-.bubbles span:nth-child(92)  { --i: 92; }
-.bubbles span:nth-child(93)  { --i: 93; }
-.bubbles span:nth-child(94)  { --i: 94; }
-.bubbles span:nth-child(95)  { --i: 95; }
-.bubbles span:nth-child(96)  { --i: 96; }
-.bubbles span:nth-child(97)  { --i: 97; }
-.bubbles span:nth-child(98)  { --i: 98; }
-.bubbles span:nth-child(99)  { --i: 99; }
-.bubbles span:nth-child(100) { --i: 100; }
-.bubbles span:nth-child(101) { --i: 101; }
-.bubbles span:nth-child(102) { --i: 102; }
-.bubbles span:nth-child(103) { --i: 103; }
-.bubbles span:nth-child(104) { --i: 104; }
-.bubbles span:nth-child(105) { --i: 105; }
-.bubbles span:nth-child(106) { --i: 106; }
-.bubbles span:nth-child(107) { --i: 107; }
-.bubbles span:nth-child(108) { --i: 108; }
-.bubbles span:nth-child(109) { --i: 109; }
-.bubbles span:nth-child(200) { --i: 200; }
-.bubbles span:nth-child(201) { --i: 201; }
-.bubbles span:nth-child(202) { --i: 202; }
-.bubbles span:nth-child(203) { --i: 203; }
-.bubbles span:nth-child(204) { --i: 204; }
-.bubbles span:nth-child(205) { --i: 205; }
-.bubbles span:nth-child(206) { --i: 206; }
-.bubbles span:nth-child(207) { --i: 207; }
-.bubbles span:nth-child(208) { --i: 208; }
-.bubbles span:nth-child(209) { --i: 209; }
-.bubbles span:nth-child(300) { --i: 300; }
-.bubbles span:nth-child(301) { --i: 301; }
-.bubbles span:nth-child(302) { --i: 302; }
-.bubbles span:nth-child(303) { --i: 303; }
-.bubbles span:nth-child(304) { --i: 304; }
-.bubbles span:nth-child(305) { --i: 305; }
-.bubbles span:nth-child(306) { --i: 306; }
-.bubbles span:nth-child(307) { --i: 307; }
-.bubbles span:nth-child(308) { --i: 308; }
-.bubbles span:nth-child(309) { --i: 309; }
-.bubbles span:nth-child(400) { --i: 400; }
-.bubbles span:nth-child(401) { --i: 401; }
-.bubbles span:nth-child(402) { --i: 402; }
-.bubbles span:nth-child(403) { --i: 403; }
-.bubbles span:nth-child(404) { --i: 404; }
-.bubbles span:nth-child(405) { --i: 405; }
-.bubbles span:nth-child(406) { --i: 406; }
-.bubbles span:nth-child(407) { --i: 407; }
-.bubbles span:nth-child(408) { --i: 408; }
-.bubbles span:nth-child(409) { --i: 409; }
-.bubbles span:nth-child(500) { --i: 500; }
-.bubbles span:nth-child(501) { --i: 501; }
-.bubbles span:nth-child(502) { --i: 502; }
-.bubbles span:nth-child(503) { --i: 503; }
-.bubbles span:nth-child(504) { --i: 504; }
-.bubbles span:nth-child(505) { --i: 505; }
-.bubbles span:nth-child(506) { --i: 506; }
-.bubbles span:nth-child(507) { --i: 507; }
-.bubbles span:nth-child(508) { --i: 508; }
-.bubbles span:nth-child(509) { --i: 509; }
-.bubbles span:nth-child(600) { --i: 600; }
-.bubbles span:nth-child(601) { --i: 601; }
-.bubbles span:nth-child(602) { --i: 602; }
-.bubbles span:nth-child(603) { --i: 603; }
-.bubbles span:nth-child(604) { --i: 604; }
-.bubbles span:nth-child(605) { --i: 605; }
-.bubbles span:nth-child(606) { --i: 606; }
-.bubbles span:nth-child(607) { --i: 607; }
-.bubbles span:nth-child(608) { --i: 608; }
-.bubbles span:nth-child(609) { --i: 609; }
-.bubbles span:nth-child(700) { --i: 700; }
-.bubbles span:nth-child(701) { --i: 701; }
-.bubbles span:nth-child(702) { --i: 702; }
-.bubbles span:nth-child(703) { --i: 703; }
-.bubbles span:nth-child(704) { --i: 704; }
-.bubbles span:nth-child(705) { --i: 705; }
-.bubbles span:nth-child(706) { --i: 706; }
-.bubbles span:nth-child(707) { --i: 707; }
-.bubbles span:nth-child(708) { --i: 708; }
-.bubbles span:nth-child(709) { --i: 709; }
-.bubbles span:nth-child(800) { --i: 800; }
-.bubbles span:nth-child(801) { --i: 801; }
-.bubbles span:nth-child(802) { --i: 802; }
-.bubbles span:nth-child(803) { --i: 803; }
-.bubbles span:nth-child(804) { --i: 804; }
-.bubbles span:nth-child(805) { --i: 805; }
-.bubbles span:nth-child(806) { --i: 806; }
-.bubbles span:nth-child(807) { --i: 807; }
-.bubbles span:nth-child(808) { --i: 808; }
-.bubbles span:nth-child(809) { --i: 809; }
-.bubbles span:nth-child(900) { --i: 900; }
-
-
-
-.bubbles {
-  position: absolute;
-  width: 100%;
-  height: 100%;
   pointer-events: none;
   z-index: 0;
 }
 
 .bubbles span {
+  --i: 0;
+  --r: 0;
+  --rx: 5;
+  pointer-events: none;
   position: absolute;
   display: block;
   width: 6px;
   height: 6px;
   background: hsl(calc(360 * var(--i) / 900), 80%, 60%);
   border-radius: 50%;
-  opacity: calc(0.2 + var(--r) * 0.08);
+  opacity: calc(0.2 + var(--r, 0) * 0.08);
   left: calc(100% * var(--i) / 900);
   bottom: -60px;
-
-  /* Escala e animação com base em variações */
-  transform: translateX(-50%) scale(calc(0.5 + var(--r) * 0.1));
-  animation: floatMulti calc(4s + var(--r) * 0.4s) linear infinite;
+  transform: translateX(-50%) scale(calc(0.5 + var(--r, 0) * 0.1));
+  animation: floatMulti calc(4s + var(--r, 0) * 0.4s) linear infinite;
 }
+
+
 
 @keyframes floatMulti {
   0% {
@@ -393,15 +164,15 @@ button:hover {
     opacity: 0.9;
   }
   30% {
-    transform: translate(calc((var(--rx) - 5) * 30px), -300px) scale(1.2);
+    transform: translate(calc((var(--rx, 5) - 5) * 30px), -300px) scale(1.2);
     opacity: 0.5;
   }
   70% {
-    transform: translate(calc((var(--rx) - 5) * 60px), -700px) scale(1);
+    transform: translate(calc((var(--rx, 5) - 5) * 60px), -700px) scale(1);
     opacity: 0.3;
   }
   100% {
-    transform: translate(calc((var(--rx) - 5) * 90px), -1000px) scale(0.7);
+    transform: translate(calc((var(--rx, 5) - 5) * 90px), -1000px) scale(0.7);
     opacity: 0;
   }
 }
@@ -416,7 +187,7 @@ textarea {
 
 .texto-criado {
     position: relative;
-    z-index: 2; /* Fica acima das bolinhas */
+    z-index: 2; 
 
 }
 

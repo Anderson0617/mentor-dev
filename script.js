@@ -1,15 +1,11 @@
-
-// === Mentor.Dev - Script JS Avançado  esta tudo detalhado  esse js  obrigado por ver  meu projeto TMJ ===
-
-// Definição das constantes globais para nome do app e versão
-const APP_NAME = "FotoMentor.Dev";
+﻿const APP_NAME = "Mentor.Dev - Gerador";
 const VERSION = "1.0.0";
 
-// Objeto para armazenar o estado da aplicação, incluindo histórico, tema e tipos válidos
+
 const estado = {
-  historico: [], // array para guardar textos gerados e seus dados
-  tema: "claro", // tema atual da interface (claro ou escuro)
-  tiposValidos: [ // tipos de textos que podem ser gerados
+  historico: [], 
+  tema: "claro", 
+  tiposValidos: [ 
     "motivacional",
     "linkedin",
     "github",
@@ -21,36 +17,36 @@ const estado = {
   ],
 };
 
-// Objeto para guardar referências aos elementos DOM que serão usados
+
 const dom = {
-  form: null,           // formulário
-  tipoInput: null,      // input/select tipo de texto
-  nomeInput: null,      // input nome
-  infoInput: null,      // input info adicional
-  output: null,         // área onde o texto gerado aparece
-  copiarBtn: null,      // botão copiar
-  limparBtn: null,      // botão limpar
-  salvarBtn: null,      // botão salvar
-  historicoLista: null, // lista do histórico na interface
-  contadorChars: null,  // contador de caracteres no info
-  contadorWords: null,  // contador de palavras no info
-  temaToggle: null,     // botão para alternar tema claro/escuro
-  mensagemErro: null,   // área para mostrar mensagens de erro
+  form: null,           
+  tipoInput: null,      
+  nomeInput: null,      
+  infoInput: null,      
+  output: null,         
+  copiarBtn: null,      
+  limparBtn: null,      
+  salvarBtn: null,      
+  historicoLista: null, 
+  contadorChars: null,  
+  contadorWords: null,  
+  temaToggle: null,     
+  mensagemErro: null,   
 };
 
-// Evento para iniciar a aplicação quando o DOM estiver carregado
+
 document.addEventListener("DOMContentLoaded", init);
 
-// Função de inicialização: cacheia DOM, vincula eventos, carrega tema, atualiza contadores e loga início
+
 function init() {
-  cacheDom();        // guarda as referências aos elementos do DOM no objeto dom
-  bindEventos();     // adiciona os event listeners aos elementos
-  atualizarContadores(); // atualiza os contadores de caracteres e palavras com base no campo info
-  carregarTema();    // define o tema inicial da página (claro ou escuro)
-  logInfo(`App iniciado: ${APP_NAME} v${VERSION}`); // log no console
+  cacheDom();        
+  bindEventos();     
+  atualizarContadores(); 
+  carregarTema();    
+  logInfo(`App iniciado: ${APP_NAME} v${VERSION}`); 
 }
 
-// Guarda referências para facilitar acesso e manipulação
+
 function cacheDom() {
   dom.form = document.getElementById("textForm");
   dom.tipoInput = document.getElementById("tipo");
@@ -67,32 +63,32 @@ function cacheDom() {
   dom.mensagemErro = document.getElementById("mensagemErro");
 }
 
-// Associa os eventos aos elementos HTML para interação
+
 function bindEventos() {
-  if (dom.form) dom.form.addEventListener("submit", onFormSubmit);           // Ao enviar formulário
-  if (dom.copiarBtn) dom.copiarBtn.addEventListener("click", onCopiarTexto); // Clicar botão copiar
-  if (dom.limparBtn) dom.limparBtn.addEventListener("click", onLimparCampos);// Clicar limpar campos
-  if (dom.salvarBtn) dom.salvarBtn.addEventListener("click", onSalvarTexto);// Clicar salvar texto
-  if (dom.infoInput) dom.infoInput.addEventListener("input", atualizarContadores); // Atualizar contadores quando usuário digitar info
-  if (dom.temaToggle) dom.temaToggle.addEventListener("click", toggleTema); // Alternar tema claro/escuro
+  if (dom.form) dom.form.addEventListener("submit", onFormSubmit);           
+  if (dom.copiarBtn) dom.copiarBtn.addEventListener("click", onCopiarTexto); 
+  if (dom.limparBtn) dom.limparBtn.addEventListener("click", onLimparCampos);
+  if (dom.salvarBtn) dom.salvarBtn.addEventListener("click", onSalvarTexto);
+  if (dom.infoInput) dom.infoInput.addEventListener("input", atualizarContadores); 
+  if (dom.temaToggle) dom.temaToggle.addEventListener("click", toggleTema); 
 }
 
-// Função para limitar texto a um número máximo de caracteres sem cortar no meio da palavra
+
 function limitarTexto(texto, limite) {
   if (!texto) return "";
   texto = texto.trim();
   if (texto.length <= limite) return texto;
   let cortado = texto.slice(0, limite);
   const ultimoEspaco = cortado.lastIndexOf(" ");
-  if (ultimoEspaco > Math.floor(limite * 0.5)) { // tenta cortar no último espaço válido
+  if (ultimoEspaco > Math.floor(limite * 0.5)) { 
     cortado = cortado.slice(0, ultimoEspaco);
   }
-  return cortado.trim() + "…"; // adiciona reticências para indicar corte
+  return cortado.trim() + "…"; 
 }
 
-// Função que gera textos baseados no tipo e dados inseridos
+
 function gerarTexto(tipo, nome, info) {
-  // Objeto com arrays de templates de textos para cada tipo
+  
   const templates = {
     motivacional: [
       `Nem sempre o caminho é fácil, mas sigo firme. Me chamo ${nome} e cada linha de código representa um passo de superação. ${info} Acreditar no processo, manter a consistência e aprender com cada erro são atitudes que me guiam diariamente. O futuro se constrói com dedicação. Programar exige paciência, prática constante e paixão genuína por resolver problemas reais. Nada substitui o esforço diário para alcançar um objetivo maior.`,
@@ -124,44 +120,44 @@ function gerarTexto(tipo, nome, info) {
     ],
   };
 
-  // Normaliza o tipo para minúsculas para evitar erros
+  
   const tipoNormalizado = tipo.toLowerCase();
 
-  // Busca o array de templates para o tipo informado
+  
   const lista = templates[tipoNormalizado];
 
-  // Caso o tipo não exista, retorna mensagem de erro
+  
   if (!lista) {
     return `Tipo "${tipo}" não reconhecido. Opções válidas: ${estado.tiposValidos.join(", ")}.`;
   }
 
-  // Escolhe aleatoriamente uma frase do array para variedade
+  
   const idx = Math.floor(Math.random() * lista.length);
   return lista[idx];
 }
 
-// Adiciona um registro ao histórico e atualiza a interface
+
 function adicionarAoHistorico(tipo, nome, info, texto) {
   const registro = {
-    id: Date.now(), // id único baseado no timestamp
+    id: Date.now(), 
     tipo,
     nome,
     info,
     texto,
   };
 
-  estado.historico.push(registro); // adiciona ao array global
-  renderizarHistorico();            // atualiza a lista na tela
+  estado.historico.push(registro); 
+  renderizarHistorico();            
 }
 
-// Atualiza visualmente a lista de históricos na tela
+
 function renderizarHistorico() {
   if (!dom.historicoLista) return;
 
-  // Limpa a lista atual para re-renderizar
+  
   dom.historicoLista.innerHTML = "";
 
-  // Percorre o histórico do mais recente para o mais antigo
+  
   estado.historico
     .slice()
     .reverse()
@@ -169,23 +165,23 @@ function renderizarHistorico() {
       const li = document.createElement("li");
       li.className = "historico-item";
 
-      // Adiciona tooltip com informações completas
+      
       li.title = `Tipo: ${item.tipo}\nNome: ${item.nome}\nInfo: ${item.info}`;
 
-      // Mostra apenas os primeiros 70 caracteres do texto com reticências
+      
       li.textContent = item.texto.slice(0, 70) + "...";
 
-      // Quando clicar, exibe o texto inteiro na área de saída
+      
       li.addEventListener("click", () => {
         if (dom.output) dom.output.textContent = item.texto;
       });
 
-      // Insere o item na lista do DOM
+      
       dom.historicoLista.appendChild(li);
     });
 }
 
-// Função para copiar o texto gerado para a área de transferência
+
 function onCopiarTexto() {
   const texto = dom.output?.textContent || "";
 
@@ -194,13 +190,13 @@ function onCopiarTexto() {
     return;
   }
 
-  // Usa API Clipboard para copiar texto
+  
   navigator.clipboard.writeText(texto).then(() => {
     alert("Texto copiado para área de transferência!");
   });
 }
 
-// Limpa os campos do formulário e o output
+
 function onLimparCampos() {
   if (dom.nomeInput) dom.nomeInput.value = "";
   if (dom.infoInput) dom.infoInput.value = "";
@@ -210,7 +206,7 @@ function onLimparCampos() {
   atualizarContadores();
 }
 
-// Salva o texto gerado em arquivo .txt para download
+
 function onSalvarTexto() {
   const texto = dom.output?.textContent || "";
 
@@ -219,7 +215,7 @@ function onSalvarTexto() {
     return;
   }
 
-  // Cria um Blob com o texto e força o download
+  
   const blob = new Blob([texto], { type: "text/plain;charset=utf-8" });
   const link = document.createElement("a");
   link.download = `texto_gerado_${Date.now()}.txt`;
@@ -227,7 +223,7 @@ function onSalvarTexto() {
   link.click();
 }
 
-// Atualiza os contadores de caracteres e palavras baseado no campo info
+
 function atualizarContadores() {
   const texto = dom.infoInput?.value || "";
   const chars = texto.length;
@@ -236,7 +232,7 @@ function atualizarContadores() {
   if (dom.contadorWords) dom.contadorWords.textContent = `Palavras: ${words}`;
 }
 
-// Alterna entre tema claro e escuro, atualizando atributo no HTML e estado interno
+
 function toggleTema() {
   if (estado.tema === "claro") {
     document.documentElement.setAttribute("data-tema", "escuro");
@@ -248,12 +244,12 @@ function toggleTema() {
   logInfo(`Tema alterado para: ${estado.tema}`);
 }
 
-// Aplica o tema atual na inicialização
+
 function carregarTema() {
   document.documentElement.setAttribute("data-tema", estado.tema);
 }
 
-// Valida os campos do formulário, mostrando mensagens de erro e focando no campo inválido
+
 function validarCampos(tipo, nome, info) {
   if (!tipo) {
     mostrarMensagemErro("❗ Por favor, selecione o tipo de texto.");
@@ -278,7 +274,7 @@ function validarCampos(tipo, nome, info) {
   return true;
 }
 
-// Exibe mensagem de erro na interface, ou alerta se o elemento não existir
+
 function mostrarMensagemErro(msg) {
   if (dom.mensagemErro) {
     dom.mensagemErro.textContent = msg;
@@ -288,7 +284,7 @@ function mostrarMensagemErro(msg) {
   }
 }
 
-// Limpa a mensagem de erro
+
 function limparMensagemErro() {
   if (dom.mensagemErro) {
     dom.mensagemErro.textContent = "";
@@ -296,24 +292,26 @@ function limparMensagemErro() {
   }
 }
 
-// Logs para facilitar debug no console
+
 function logInfo(msg, obj) {
   if (obj !== undefined) {
-    console.log(`ℹ️ ${msg}`, obj);
+    console.log(`[INFO] ${msg}`, obj);
   } else {
-    console.log(`ℹ️ ${msg}`);
+    console.log(`[INFO] ${msg}`);
   }
 }
+
 
 function logErro(msg, obj) {
   if (obj !== undefined) {
-    console.error(`❌ ${msg}`, obj);
+    console.error(`[ERRO] ${msg}`, obj);
   } else {
-    console.error(`❌ ${msg}`);
+    console.error(`[ERRO] ${msg}`);
   }
 }
 
-// Exporta o histórico inteiro para arquivo JSON para backup ou compartilhamento
+
+
 function exportarHistorico() {
   if (estado.historico.length === 0) {
     alert("Nenhum texto no histórico para exportar.");
@@ -327,7 +325,7 @@ function exportarHistorico() {
   link.click();
 }
 
-// Função extra que pode adicionar frases motivacionais ao texto gerado (não usada diretamente)
+
 function enriquecerTextoSimples(textoBase) {
   const frasesInspiradoras = [
     "Acredite no seu potencial e vá além!",
@@ -341,19 +339,18 @@ function enriquecerTextoSimples(textoBase) {
   return textoBase + " " + aleatorio;
 }
 
-// Código para criar animação das bolhas na tela
+
 const container = document.querySelector('.bubbles');
-for (let i = 0; i < 900; i++) {
-  const span = document.createElement('span');
-  span.style.setProperty('--i', i);                         // posição horizontal (variável CSS)
-  span.style.setProperty('--r', Math.floor(Math.random() * 10));  // variação escala/opacidade
-  span.style.setProperty('--rx', Math.floor(Math.random() * 11)); // direção horizontal (-5 a +5)
-  container.appendChild(span);
+if (container) {
+  container.innerHTML = '';
+  for (let i = 0; i < 900; i++) {
+    const span = document.createElement('span');
+    span.style.setProperty('--i', i);
+    span.style.setProperty('--r', Math.floor(Math.random() * 10));
+    span.style.setProperty('--rx', Math.floor(Math.random() * 11));
+    container.appendChild(span);
+  }
 }
-
-// Função para enviar os dados ao webhook do n8n (integração backend)
-
-// ✅ Função de envio ao n8n
 async function enviarParaN8n(tipo, nome, info, texto) {
   const webhookUrl = "https://anderson-oliveira.app.n8n.cloud/webhook/gerador-texto";
   const payload = { 
@@ -376,7 +373,7 @@ async function enviarParaN8n(tipo, nome, info, texto) {
       throw new Error(`Erro HTTP ao enviar para n8n: ${res.status}`);
     }
 
-    // Tenta extrair JSON da resposta
+    
     let json;
     try {
       json = await res.json();
@@ -401,38 +398,38 @@ async function onFormSubmit(event) {
 
   if (!validarCampos(tipo, nome, info)) return;
 
-  logInfo("🎯 Submit clicado", { tipo, nome, info });
+  logInfo("Submit clicado", { tipo, nome, info });
 
-  // Gera texto local (fallback)
+  
   const textoGerado = gerarTexto(tipo, nome, info);
   dom.output.innerHTML = textoGerado.replace(/\n/g, "<br>");
 
   try {
-    // Aguarda resposta do n8n
+    
     const resposta = await enviarParaN8n(tipo, nome, info, textoGerado);
 
-    console.log("🧐 Resposta completa do n8n:", resposta);
+    console.log("Resposta completa do n8n:", resposta);
 
-    // Se resposta.output for string não vazia, usa ela
+    
     if (resposta?.output && typeof resposta.output === "string" && resposta.output.trim().length > 0) {
       const textoN8n = resposta.output;
       dom.output.innerHTML = textoN8n.replace(/\n/g, "<br>");
-      logInfo("✅ Texto do n8n exibido com sucesso!");
+      logInfo("Texto do n8n exibido com sucesso!");
       adicionarAoHistorico(tipo, nome, info, textoN8n);
     } else {
-      // Senão, usa texto local
-      logInfo("⚠️ Resposta do n8n sem texto. Usando texto local.");
+      
+      logInfo("Resposta do n8n sem texto. Usando texto local.");
       adicionarAoHistorico(tipo, nome, info, textoGerado);
     }
 
   } catch (erro) {
-    // Em caso de erro, fallback local
-    logErro("❌ Erro ao enviar para n8n. Usando fallback local.", erro);
+    
+    logErro("Erro ao enviar para n8n. Usando fallback local.", erro);
     adicionarAoHistorico(tipo, nome, info, textoGerado);
 
-    alert("⚠️ Falha no envio ao servidor, texto salvo localmente.");
+    alert("Falha no envio ao servidor, texto salvo localmente.");
   }
 
   atualizarContadores();
-  logInfo("✅ Fluxo finalizado!");
+  logInfo("Fluxo finalizado!");
 }
