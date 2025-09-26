@@ -8,6 +8,7 @@ Mas não se preocupe: o fallback foi projetado para gerar **textos longos e comp
 ---
 🌐 Projeto online: [Mentor.Dev – Gerador de Textos](https://anderson0617.github.io/mentor-dev/)  
 📂 Repositório no GitHub: [github.com/Anderson0617/Mentor-Dev](https://github.com/Anderson0617/Mentor-Dev)  
+🔗 Perfil no LinkedIn: [Anderson Olivera](https://www.linkedin.com/in/anderson-olivera-dev)  
 _ _ _ _ _ _
 
 ## ✨ Funcionalidades
